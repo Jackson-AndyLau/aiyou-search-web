@@ -12,6 +12,21 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
+
+	<!-- 解决post乱码 -->
+	<filter>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>CharacterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 	<!-- springmvc 的前端控制器 -->
 	<servlet>
 		<servlet-name>aiyou-search-web</servlet-name>
@@ -27,6 +42,7 @@
 	<servlet-mapping>
 		<!-- /* & / 区别：/* 表示拦截所有资源访问，包括转发的的JSP页面，这个是错误的，不能使用；/ 表示拦截所有的静态资源，不包括转发的JSP页面 -->
 		<servlet-name>aiyou-search-web</servlet-name>
-		<url-pattern>/</url-pattern>
+		<!-- 伪静态化：SEO 搜索引擎优化 -->
+		<url-pattern>*.html</url-pattern>
 	</servlet-mapping>
 </web-app>

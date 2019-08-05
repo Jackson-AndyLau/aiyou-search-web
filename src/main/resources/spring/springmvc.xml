@@ -13,6 +13,7 @@
 	<!-- 配置扫描包 -->
 	<context:component-scan
 		base-package="com.huazai.b2c.aiyou.controller" />
+	<!-- 开启注解驱动 -->
 	<mvc:annotation-driven />
 	<!-- 加载配置文件配置 -->
 	<context:property-placeholder
@@ -38,7 +39,6 @@
 		address="192.168.159.148:2181" />
 
 	<!-- 应用调用远程服务接口 -->
-<!-- 	<dubbo:reference
-		interface="com.huazai.b2c.aiyou.service.TbDubboService"
+	<!-- <dubbo:reference interface="com.huazai.b2c.aiyou.service.TbDubboService" 
 		id="tbDubboService" timeout="300000" /> -->
 </beans>
