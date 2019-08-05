@@ -39,6 +39,7 @@
 		address="192.168.159.148:2181" />
 
 	<!-- 应用调用远程服务接口 -->
-	<!-- <dubbo:reference interface="com.huazai.b2c.aiyou.service.TbDubboService" 
-		id="tbDubboService" timeout="300000" /> -->
+	<dubbo:reference
+		interface="com.huazai.b2c.aiyou.service.SearchItemService"
+		id="searchItemService" timeout="300000" />
 </beans>
