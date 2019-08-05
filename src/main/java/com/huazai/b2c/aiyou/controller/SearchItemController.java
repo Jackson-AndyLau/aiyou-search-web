@@ -1,5 +1,7 @@
 package com.huazai.b2c.aiyou.controller;
 
+import java.io.UnsupportedEncodingException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -36,15 +38,24 @@ public class SearchItemController
 
 	@RequestMapping(value = "/query/list")
 	public String searchItemByPage(@RequestParam(value = "q") String query,
-			@RequestParam(defaultValue = "1") Integer pageNum, Model model)
+			@RequestParam(defaultValue = "1") Integer page, Model model)
 	{
-		// 调查询服务层获取结果
-		SearchResultData resultData = searchItemService.searchItemByPage(query, pageNum, ITEM_RECORD);
-		// 将数据传递到页面
-		model.addAttribute("query", query);
-		model.addAttribute("itemList", resultData.getItemList());
-		model.addAttribute("totalPages", resultData.getPageCount());
-		model.addAttribute("page", pageNum);
-		return "search";
+		// 修改queryString编码
+		try
+		{
+			query = new String(query.getBytes("iso8859-1"), "utf-8");
+			// 调查询服务层获取结果
+			SearchResultData resultData = searchItemService.searchItemByPage(query, page, ITEM_RECORD);
+			// 将数据传递到页面
+			model.addAttribute("query", query);
+			model.addAttribute("itemList", resultData.getItemList());
+			model.addAttribute("totalPages", resultData.getPageCount());
+			model.addAttribute("page", page);
+			return "search";
+		} catch (UnsupportedEncodingException e)
+		{
+			e.printStackTrace();
+		}
+		return "error/exception";
 	}
 }
