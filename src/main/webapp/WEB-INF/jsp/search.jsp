@@ -7,7 +7,8 @@
 <head>
 <meta http-equiv="Cache-Control" content="max-age=300" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>${query} - 商品搜索 - 淘淘</title>
+<title>${query} - 商品搜索 - 哎呦</title>
+<link rel="icon" type="image/x-ico" href="logo/favicon.ico">
 <meta name="Keywords" content="java,淘淘java" />
 <meta name="description" content="在淘淘中找到了29910件java的类似商品，其中包含了“图书”，“电子书”，“教育音像”，“骑行运动”等类型的java的商品。" />
 <link rel="stylesheet" type="text/css" href="/css/base.css" media="all" />
@@ -56,7 +57,7 @@
 		<i>淘淘价：</i>
 		<strong>￥<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" value="${item.price / 100 }"/></strong>
 	</div>
-	<div class="service">由 淘淘 发货</div>
+	<div class="service">由 哎呦 发货</div>
 	<div class="extra">
 		<span class="star"><span class="star-white"><span class="star-yellow h5">&nbsp;</span></span></span>
 	</div>
@@ -70,7 +71,6 @@
 <script type="text/javascript" src="/js/jquery.hashchange.js"></script>
 <script type="text/javascript" src="/js/search_main.js"></script>
 <script type="text/javascript">
-//${paginator.totalPages}
 SEARCH.query = "${query}";
 SEARCH.bottom_page_html(${page},${totalPages},'');
 </script>
