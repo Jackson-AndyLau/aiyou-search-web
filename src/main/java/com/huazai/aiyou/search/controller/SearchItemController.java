@@ -1,4 +1,4 @@
-package com.huazai.b2c.aiyou.controller;
+package com.huazai.aiyou.search.controller;
 
 import java.io.UnsupportedEncodingException;
 
@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.huazai.b2c.aiyou.repo.SearchResultData;
-import com.huazai.b2c.aiyou.service.SearchItemService;
+import com.huazai.aiyou.common.response.SearchResultData;
+import com.huazai.aiyou.search.service.SearchItemService;
 
 /**
  * 

@@ -12,7 +12,7 @@
 
 	<!-- 配置扫描包 -->
 	<context:component-scan
-		base-package="com.huazai.b2c.aiyou.controller" />
+		base-package="com.huazai.aiyou.search.controller" />
 	<!-- 开启注解驱动 -->
 	<mvc:annotation-driven />
 	<!-- 加载配置文件配置 -->
@@ -40,6 +40,6 @@
 
 	<!-- 应用调用远程服务接口 -->
 	<dubbo:reference
-		interface="com.huazai.b2c.aiyou.service.SearchItemService"
+		interface="com.huazai.aiyou.search.service.SearchItemService"
 		id="searchItemService" timeout="300000" />
 </beans>
