@@ -33,8 +33,8 @@ public class SearchItemController
 	@Autowired
 	private SearchItemService searchItemService;
 
-	@Value("${ITEM_RECORD}")
-	private Integer ITEM_RECORD;
+	@Value("${AIYOU_TB_ITEM_RECORD}")
+	private Integer AIYOU_TB_ITEM_RECORD;
 
 	@RequestMapping(value = "/query/list")
 	public String searchItemByPage(@RequestParam(value = "q") String query,
@@ -45,7 +45,7 @@ public class SearchItemController
 		{
 			query = new String(query.getBytes("iso8859-1"), "utf-8");
 			// 调查询服务层获取结果
-			SearchResultData resultData = searchItemService.searchItemByPage(query, page, ITEM_RECORD);
+			SearchResultData resultData = searchItemService.searchItemByPage(query, page, AIYOU_TB_ITEM_RECORD);
 			// 将数据传递到页面
 			model.addAttribute("query", query);
 			model.addAttribute("itemList", resultData.getItemList());
