@@ -28,7 +28,7 @@ import com.huazai.aiyou.search.service.SearchItemService;
 @RequestMapping(value = "/search")
 @Controller
 public class SearchItemController
-{
+{	
 
 	@Autowired
 	private SearchItemService searchItemService;
